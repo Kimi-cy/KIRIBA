@@ -2,14 +2,14 @@ import {useState} from 'react'
 import {motion,AnimatePresence} from 'framer-motion'
 
 // ---- Cambia estos datos por los reales ----
-const MARCA='TU MARCA'
+const MARCA='KIRIBA'
 const WHATSAPP='51900000000'
-const VIDEO='' // ejemplo: '/hero.mp4' (guarda el video en la carpeta public)
+const VIDEO='/hero.mp4' // video de portada (carpeta public)
 const PRODUCTOS=[
-  {n:'Casaca bomber',p:189,c:'#C9C3D6',t:['S','M','L','XL']},
-  {n:'Polera oversize',p:129,c:'#D9D4CC',t:['S','M','L','XL']},
-  {n:'Polo básico',p:59,c:'#B9BFCB',t:['S','M','L']},
-  {n:'Pantalón cargo',p:159,c:'#A9AFA6',t:['28','30','32','34']}
+  {n:'Blusa leopardo',p:99,c:'#7A5C3A',t:['S','M','L']},
+  {n:'Vestido satinado',p:169,c:'#5A4330',t:['S','M','L']},
+  {n:'Top corset',p:89,c:'#8C6D4A',t:['S','M','L']},
+  {n:'Falda midi',p:119,c:'#3A2C22',t:['S','M','L']}
 ]
 // -------------------------------------------
 
@@ -32,15 +32,12 @@ export default function App(){
     <header><span className="logo">{MARCA}</span><a href="#catalogo">Ver prendas</a></header>
 
     <section className="hero">
-      {VIDEO?<video src={VIDEO} autoPlay muted loop playsInline/>:<div className="fondo"/>}
-      <div className="velo"/>
-      <div className="hero-txt">
-        <div className="mask"><motion.h1 initial={{y:'105%'}} animate={{y:0}} transition={{duration:.9,ease:[.2,.7,.2,1]}}>Primera colección</motion.h1></div>
-        <motion.p initial={{opacity:0}} animate={{opacity:1}} transition={{delay:.7,duration:.8}}>Prendas hechas en Lima. Pide por WhatsApp.</motion.p>
-      </div>
+      <video src={VIDEO} autoPlay muted loop playsInline/>
+      <motion.a className="ver" href="#catalogo" initial={{opacity:0,y:12}} animate={{opacity:1,y:0}} transition={{delay:1.2,duration:.8}}>Ver colección</motion.a>
     </section>
 
     <section id="catalogo" className="cat">
+      <h2 className="titulo">Nueva colección</h2>
       <div className="stage">
         <button className="flecha" aria-label="Prenda anterior" onClick={()=>go(i-1,-1)}>‹</button>
         <AnimatePresence mode="wait" custom={dir}>
@@ -53,7 +50,7 @@ export default function App(){
       </div>
 
       <div className="info">
-        <div className="fila"><h2>{p.n}</h2><span className="precio">S/ {p.p}</span></div>
+        <div className="fila"><h3>{p.n}</h3><span className="precio">S/ {p.p}</span></div>
         <div className="tallas">
           {p.t.map(t=><button key={t} aria-pressed={t===talla} onClick={()=>setTallas({...tallas,[p.n]:t})}>{t}</button>)}
         </div>
@@ -64,6 +61,6 @@ export default function App(){
       </div>
     </section>
 
-    <footer><span>Pagos por Yape, Plin o transferencia</span><span>Instagram: @tumarca</span></footer>
+    <footer><span>Pagos por Yape, Plin o transferencia</span><span>Instagram: @kiriba</span></footer>
   </>)
 }

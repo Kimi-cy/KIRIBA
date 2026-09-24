@@ -4,7 +4,7 @@ import {motion,AnimatePresence} from 'framer-motion'
 // ---- Cambia estos datos por los reales ----
 const MARCA='KIRIBA'
 const WHATSAPP='51900000000'
-const VIDEO='/hero.mp4' // video de portada (carpeta public)
+const PORTADA='/hero.jpg' // imagen de portada (carpeta public)
 const PRODUCTOS=[
   {n:'Blusa leopardo',p:99,c:'#7A5C3A',t:['S','M','L']},
   {n:'Vestido satinado',p:169,c:'#5A4330',t:['S','M','L']},
@@ -32,7 +32,7 @@ export default function App(){
     <header><span className="logo">{MARCA}</span><a href="#catalogo">Ver prendas</a></header>
 
     <section className="hero">
-      <video src={VIDEO} autoPlay muted loop playsInline/>
+      <motion.img src={PORTADA} alt="KIRIBA: tu estilo, tu esencia, en un solo lugar." initial={{opacity:0}} animate={{opacity:1}} transition={{duration:1.2}}/>
       <motion.a className="ver" href="#catalogo" initial={{opacity:0,y:12}} animate={{opacity:1,y:0}} transition={{delay:1.2,duration:.8}}>Ver colección</motion.a>
     </section>
 

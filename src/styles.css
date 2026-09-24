@@ -8,8 +8,8 @@ header{position:absolute;top:0;left:0;right:0;z-index:3;display:flex;justify-con
 header a{color:var(--ink);text-decoration:none;opacity:.8}
 .logo{font-family:"Cormorant Garamond",Georgia,serif;font-weight:600;font-size:1.4rem;letter-spacing:.18em;color:var(--gold)}
 .hero{position:relative;height:100svh;background:#000;overflow:hidden}
-.hero video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-@media (orientation:portrait){.hero video{object-fit:contain}}
+.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+@media (orientation:portrait){.hero img{object-fit:contain}}
 .ver{position:absolute;z-index:2;left:50%;bottom:calc(32px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);padding:14px 28px;border:1px solid var(--gold);color:var(--ink);text-decoration:none;background:rgba(13,11,9,.55);white-space:nowrap}
 .ver:hover{background:var(--gold);color:#0D0B09}
 .cat{padding:clamp(48px,8vw,96px) clamp(16px,4vw,48px);display:grid;gap:24px;max-width:900px;margin:0 auto}

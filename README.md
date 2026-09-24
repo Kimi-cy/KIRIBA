@@ -1,7 +1,7 @@
 # Catálogo KIRIBA
 
-Edita `src/App.jsx` (nombre, número de WhatsApp, prendas y video).
-Para el video de portada: guarda `hero.mp4` en la carpeta `public`..
+Edita `src/App.jsx` (nombre, número de WhatsApp, prendas).
+Para cambiar la portada: reemplaza `public/hero.jpg` por tu imagen (misma proporción horizontal).
 
 ## Publicar en Vercel
 1. Sube esta carpeta a un repositorio nuevo en GitHub.

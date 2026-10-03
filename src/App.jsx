@@ -3,7 +3,7 @@ import {motion,AnimatePresence} from 'framer-motion'
 
 // ---- Cambia estos datos por los reales ----
 const MARCA='KIRIBA'
-const WHATSAPP='51900000000'
+const WHATSAPP='51952328707'
 const PORTADA='/hero.jpg' // imagen de portada (carpeta public)
 
 // Para agregar una categoria nueva (p. ej. Calzado o Pantalones),
